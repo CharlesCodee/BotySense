@@ -18,10 +18,10 @@ function NavBar() {
         </NavLink>
 
         <NavLink to="Rouges">
-          <h3>rouge à lèvre</h3>
+          <h3>Rouge à lèvre</h3>
         </NavLink>
         <NavLink to="Colorations">
-          <h3>colorations</h3>
+          <h3>Colorations</h3>
         </NavLink>
         <NavLink to="Panier">
           <img className="panier" src="/images/paniers.png" alt="" />
