@@ -12,7 +12,6 @@ function Footer() {
           <img src="./images/chrono.png" alt="" />
           <p>Livraison en 48h</p>
         </div>
-        git push
         <div className="info_item">
           <img src="./images/telephone.png" alt="" />
           <p>Une question sur un produit ? Ecrivez-nous</p>
