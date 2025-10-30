@@ -1,11 +1,10 @@
-
 /* Styles de la navbar */
 .containerNavBar {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #49362a;
-  font-family: "BlairlTC", sans-serif;
+  font-family: "Limelight", sans-serif; /* ← font Google utilisée */
 
   .panier {
     width: 4vw;
@@ -17,7 +16,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100vw;
-    font-family: "BlairlTC", sans-serif;
+    font-family: "Limelight", sans-serif; /* même font pour les liens */
 
     .boty {
       width: 7vw;
@@ -27,6 +26,8 @@
       color: white !important;
       transition: color 0.6s;
       border-bottom: 1px solid transparent;
+      font-family: "Limelight", sans-serif; /* force la font sur les h3 */
+      font-weight: 400; /* poids normal de Limelight */
 
       &:hover {
         border-bottom: 1px solid $or-rose;
