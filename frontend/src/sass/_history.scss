@@ -1,0 +1,221 @@
+.apropos {
+  .title-description {
+    background-color: white;
+    .titledescription {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      font-size: 50px;
+      background-color: white !important;
+      font-family: "test", sans-serif;
+      text-decoration: underline;
+    }
+
+    .title_propos {
+      font-size: 60px;
+    }
+
+    .description-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      margin-bottom: 100px;
+      margin-top: 100px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 100px;
+    }
+
+    .image {
+      height: 768px;
+      width: 432px;
+      border-radius: 25px;
+    }
+
+    .content p {
+      font-size: 1.5rem;
+      margin: 10px;
+      width: 748px;
+      height: auto;
+      text-align: center;
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    }
+
+    .paragraphe {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .img-container1 {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 100px;
+      margin-bottom: 50px;
+
+      .gif {
+        border-radius: 25px;
+      }
+    }
+
+    .marques {
+      display: flex;
+      justify-content: center;
+      font-size: 50px;
+      background-color: #f5f5dc;
+      font-family: "test", sans-serif;
+      text-decoration: underline;
+      padding: 25px;
+      margin-bottom: 50px;
+    }
+
+    .img-container2 {
+      position: relative;
+      padding: 50px;
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+
+      .img-marques {
+      }
+    }
+  }
+}
+
+@keyframes rotar {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+#slideshow {
+  height: 25vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+.slideshow-title {
+  font-size: 62px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10%;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+.sub-heading {
+  padding-top: 50px;
+  font-size: 18px;
+}
+.sub-heading-two {
+  font-size: 15px;
+}
+.sub-heading-three {
+  font-size: 13px;
+}
+.sub-heading-four {
+  font-size: 11px;
+}
+.sub-heading-five {
+  font-size: 9px;
+}
+.sub-heading-six {
+  font-size: 7px;
+}
+.sub-heading-seven {
+  font-size: 5px;
+}
+.sub-heading-eight {
+  font-size: 3px;
+}
+.sub-heading-nine {
+  font-size: 1px;
+}
+.entire-content {
+  margin: auto;
+  width: 190px;
+  perspective: 1000px;
+  position: relative;;
+}
+.content-carrousel {
+  width: 100%;
+  position: absolute;
+  float: right;
+  animation: rotar 15s infinite linear;
+  transform-style: preserve-3d;
+  &:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+  figure {
+    width: 100%;
+    height: 120px;
+    border: 1px solid #3B444B;
+    overflow: hidden;
+    position: absolute;
+    &:nth-child(1) {
+      transform: rotateY(0deg) translateZ(300px);
+    }
+    &:nth-child(2) {
+      transform: rotateY(40deg) translateZ(300px);
+    }
+    &:nth-child(3) {
+      transform: rotateY(80deg) translateZ(300px);
+    }
+    &:nth-child(4) {
+      transform: rotateY(120deg) translateZ(300px);
+    }
+    &:nth-child(5) {
+      transform: rotateY(160deg) translateZ(300px);
+    }
+    &:nth-child(6) {
+      transform: rotateY(200deg) translateZ(300px);
+    }
+    &:nth-child(7) {
+      transform: rotateY(240deg) translateZ(300px);
+    }
+    &:nth-child(8) {
+      transform: rotateY(280deg) translateZ(300px);
+    }
+    &:nth-child(9) {
+      transform: rotateY(320deg) translateZ(300px);
+    }
+    &:nth-child(10) {
+      transform: rotateY(360deg) translateZ(300px);
+    }
+  }
+  img {
+    image-rendering: auto;
+    transition: all 300ms;
+    width: 100%;
+    height: 100%;
+    &:hover {
+      transform: scale(1.2);
+      transition: all 300ms;
+    }
+  }
+}
+.shadow {
+  position: absolute;
+  box-shadow: 0px 0px 5px 0px #000;
+  border-radius: 1px;
+  background-color: white !important;
+}
+
+.testzeubi{
+  display: flex;
+  justify-content: center !important;
+  font-family: "test", sans-serif;
+  margin-bottom: 50px;
+  text-decoration: underline;
+}
+
+

@@ -1,0 +1,60 @@
+.productDetails {
+  display: flex;
+  flex-direction: row;
+  padding: 3vh;
+  gap: 20px;
+  h1{
+    font-size: 1.5rem;
+  }
+  p{
+    font-size: 0.6rem;
+  }
+  img {
+    height: 35vw;
+    border-radius: 5px;
+    box-shadow: 0 0 5px $marron-chocolat;
+  }
+  .etoiles{
+    .plein{
+      font-size: 3rem;
+    }
+    .vide{
+      font-size: 3rem;
+    }
+
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: 0 0 5px $marron-chocolat;
+    padding-inline: 6vw;
+    .desc {
+      font-size: 1.1rem;
+    }
+    .ing {
+      font-size: 1.1rem;
+    }
+    button {
+      width: 100%;
+      height: 40px;
+      padding-inline: 10px;
+      border: 1px solid $beige-creme;
+      border-radius: 5px;
+      background-color: $marron-chocolat;
+      color: $beige-creme;
+      width: fit-content;
+      font-size: 1rem;
+      box-shadow: 0 0 5px $beige-creme;
+      margin: 0 auto; /* Ajoutez cette ligne pour centrer le bouton */
+      &:hover {
+        background-color: $beige-creme;
+        color: $marron-chocolat;
+        border-color: $marron-chocolat;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.containerNavBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #49362a;
+  font-family: "test", sans-serif;
+  .panier {
+    width: 4vw;
+  }
+
+  .links {
+    display: flex;
+    cursor: pointer;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    font-family: "test", sans-serif;
+    .boty {
+      width: 7vw;
+    }
+    h3 {
+      color: white !important;
+      transition: color 0.6s;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom: 1px solid $or-rose;
+        transition: 0.6s;
+        color: $or-rose;
+      }
+    }
+  }
+}

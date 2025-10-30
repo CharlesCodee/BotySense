@@ -1,0 +1,35 @@
+.footer {
+  background-color: #49362A;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  color: white !important;
+  position: relative;
+}
+
+.footer_info {
+  display: flex;
+  flex-direction: row;
+
+  p {
+    font-size: 15px;
+  }
+}
+
+.info_item {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  gap: 10px;
+}
+
+.info_item img {
+  border-radius: 50%;
+}
+
+.logo_footer {
+  position: absolute;
+  right: 0px;
+  height: auto !important;
+  width: 100px !important;
+}

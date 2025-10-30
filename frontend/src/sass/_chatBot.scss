@@ -1,0 +1,145 @@
+.containerChatBot {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border-radius: 10px 0 0 0;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  .robot {
+    width: 7vw;
+
+    cursor: pointer;
+  }
+
+  .bulle {
+    position: fixed;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: $or-rose;
+    height: 6vh;
+    width: 6vw;
+    text-align: center;
+    border-radius: 30px 30px 0 30px;
+    right: 65px;
+    bottom: 85px;
+    display: none;
+  }
+}
+
+.chatBot-component {
+  position: fixed;
+  bottom: 85px;
+  right: 100px;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 15px;
+  width: 20vw;
+  background-color: $beige-creme;
+  padding-bottom: 2px;
+  height: 55vh;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  .chat {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    padding: 10px 10px 0 10px;
+    font-size: 0.8rem;
+
+    &::-webkit-scrollbar {
+      width: 0.5vw;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #601515;
+      border-radius: 15px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      width: 10px;
+      height: 25vh;
+    }
+
+    p {
+      max-width: 60%;
+      background-color: #7072de;
+      font-family: "Roboto", sans-serif;
+      padding: 10px;
+      margin: 10px 0;
+      position: relative;
+      word-wrap: break-word;
+      div {
+        font-family: "Roboto", sans-serif;
+        font-size: 0.8rem;
+        a {
+          font-family: "Roboto", sans-serif;
+          font-size: 0.8rem;
+        }
+      }
+    }
+    p::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid #f0f0f0;
+      border-top: 10px solid #f0f0f0;
+      border-bottom: 10px solid transparent;
+      left: -20px;
+      top: 0;
+    }
+
+    .user-message {
+      align-self: flex-end;
+      background-color: $or-rose;
+      border-radius: 15px 15px 0px 15px;
+    }
+    .ai-message {
+      color: white;
+      align-self: flex-start;
+      border-radius: 15px 15px 15px 0px;
+      font-family: "Roboto", sans-serif;
+      font-size: 0.8rem;
+      a{
+        color: $or-rose;
+      }
+    }
+  }
+
+  .input-container {
+    padding: 10px;
+  }
+
+  .input {
+    border: none;
+    border-radius: 30px;
+    padding-right: 2.5vw;
+    padding-inline: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .send {
+    border: none;
+    border-radius: 30px;
+    display: flex;
+    width: auto;
+    height: 4vh;
+    justify-content: center;
+    position: absolute;
+    right: 10px; /* Same as padding-right for input */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    bottom: 10px; /* Adjust as needed */
+    // transform: translateY(50%); /* Center vertically */
+  }
+}

@@ -1,0 +1,81 @@
+.productPages {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-inline: 1vw;
+  margin-bottom: 5vh;
+  
+  .productCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 320px;
+    height: 460px;
+    padding: 10px;
+    margin-top: 5vh;
+    margin-right: 3vw;
+    margin-left: 3vw;
+    margin-bottom: 1.2vh;
+    border-radius: 5px;
+    box-shadow: 0 0 2px $marron-chocolat;
+    background-image: url(../images/backgroundcard4.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $marron-chocolat;
+    font-size: 1.2rem;
+    text-align: center;
+
+    &:hover {
+      box-shadow: 0 0 5px $or-rose;
+      border-color: $or-rose;
+      scale: 1.02;
+    }
+    img {
+      width: 75%;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px $or-rose;
+    }
+    .text {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-around;
+      h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: bolder;
+        font-size: 0.9rem;
+      }
+      .description {
+        text-align: center;
+        font-size: 0.6rem;
+      }
+      .prix {
+        text-align: end;
+        font-size: 0.8rem;
+      }
+      button {
+        width: 100%;
+        height: 40px;
+        padding-inline: 10px;
+        border: 1px solid $beige-creme;
+        border-radius: 5px;
+        background-color: $marron-chocolat;
+        color: $beige-creme;
+        width: fit-content;
+        font-size: 1rem;
+        box-shadow: 0 0 5px $beige-creme;
+        margin: 0 auto; /* Ajoutez cette ligne pour centrer le bouton */
+        &:hover {
+          background-color: $beige-creme;
+          color: $marron-chocolat;
+          border-color: $marron-chocolat;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
