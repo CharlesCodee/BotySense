@@ -5,7 +5,7 @@ function Footer() {
     <div className="footer">
       <div className="footer_info">
         <div className="info_item">
-          <img src="./images/cadenas.png" alt="" />
+          <img src="/images/cadenas.png" alt="" />
           <p>Paiement sécurisé</p>
         </div>
         <div className="info_item">
