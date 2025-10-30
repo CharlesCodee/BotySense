@@ -1,9 +1,19 @@
+/* Déclaration des fonts */
+@font-face {
+  font-family: "BlairlTC";
+  src: url("/font/BlairlTC-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Styles de la navbar */
 .containerNavBar {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #49362a;
-  font-family: "test", sans-serif;
+  font-family: "BlairlTC", sans-serif;
+
   .panier {
     width: 4vw;
   }
@@ -14,10 +24,12 @@
     justify-content: space-around;
     align-items: center;
     width: 100vw;
-    font-family: "test", sans-serif;
+    font-family: "BlairlTC", sans-serif;
+
     .boty {
       width: 7vw;
     }
+
     h3 {
       color: white !important;
       transition: color 0.6s;
