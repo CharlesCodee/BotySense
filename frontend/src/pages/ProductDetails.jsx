@@ -4,14 +4,17 @@ import PropTypes from "prop-types";
 
 function ProductDetails({ products }) {
   const { id } = useParams();
-  const { nom, descriptionLongue, image, ingredients, prix, note } =
-    products.find((product) => product.id.toString() === id);
+  const product = products.find((p) => p.id.toString() === id);
 
-  // Fonction pour générer les étoiles en fonction de la note arrondie
+  if (!product) return <p>Produit non trouvé</p>;
+
+  const { nom, descriptionLongue, image, ingredients, prix, note } = product;
+
+  // Fonction pour générer les étoiles
   const afficherEtoiles = () => {
     const noteArrondie = Math.round(note);
-    const etoilesPleines = "★".repeat(noteArrondie); // Utiliser un caractère d'étoile pleine
-    const etoilesVides = "☆".repeat(5 - noteArrondie); // Utiliser un caractère d'étoile vide
+    const etoilesPleines = "★".repeat(noteArrondie);
+    const etoilesVides = "☆".repeat(5 - noteArrondie);
 
     return (
       <div className="etoiles">
@@ -27,13 +30,15 @@ function ProductDetails({ products }) {
 
   return (
     <div className="productDetails">
-      <img src={image} alt={nom} />
+      <div className="imageWrapper">
+        <img src={image} alt={nom} />
+      </div>
       <div className="text">
         <h1>{nom}</h1>
         {afficherEtoiles()}
         <p className="desc">{descriptionLongue}</p>
         <p className="ing">{ingredients}</p>
-        <button type="button">{`${prix} € -  Ajouter au panier`}</button>
+        <button type="button">{`${prix} € - Ajouter au panier`}</button>
       </div>
     </div>
   );

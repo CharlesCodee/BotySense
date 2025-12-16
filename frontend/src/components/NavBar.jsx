@@ -1,33 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function NavBar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <div className="containerNavBar">
-      <div className="links">
-        <NavLink to="/">
-          <div className="logo">
-            <img className="boty" src="/images/BotySense.webp" alt="logo" />
-          </div>
-        </NavLink>
-        <NavLink to="Shampooings">
-          <h3>Shampooing</h3>
-        </NavLink>
-        <NavLink to="Cremes">
-          <h3>Crèmes</h3>
+    <nav className="containerNavBar">
+      <div className="nav-content">
+        {/* Logo */}
+        <NavLink to="/" className="logo" onClick={closeMenu}>
+          <img className="boty" src="/images/BotySense.webp" alt="logo" />
         </NavLink>
 
-        <NavLink to="Rouges">
-          <h3>Rouge à lèvre</h3>
-        </NavLink>
-        <NavLink to="Colorations">
-          <h3>Colorations</h3>
-        </NavLink>
-        <NavLink to="Panier">
-          <img className="panier" src="/images/paniers.png" alt="" />
-        </NavLink>
+        {/* Burger icon */}
+        <div
+          className={`burger ${menuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        {/* Links */}
+        <div className={`links ${menuOpen ? "active" : ""}`}>
+          <NavLink to="Shampooings" onClick={closeMenu}>
+            <h3>Shampooing</h3>
+          </NavLink>
+          <NavLink to="Cremes" onClick={closeMenu}>
+            <h3>Crèmes</h3>
+          </NavLink>
+          <NavLink to="Rouges" onClick={closeMenu}>
+            <h3>Rouge à lèvres</h3>
+          </NavLink>
+          <NavLink to="Colorations" onClick={closeMenu}>
+            <h3>Colorations</h3>
+          </NavLink>
+          <NavLink to="Panier" onClick={closeMenu}>
+            <img className="panier" src="/images/paniers.png" alt="panier" />
+          </NavLink>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 }
 

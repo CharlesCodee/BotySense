@@ -3,33 +3,109 @@
   height: 100px;
   display: flex;
   justify-content: center;
+  align-items: center;
   color: white !important;
   position: relative;
-}
+  padding: 0 20px;
+  box-sizing: border-box;
 
-.footer_info {
-  display: flex;
-  flex-direction: row;
+  .footer_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px;
 
-  p {
-    font-size: 15px;
+    p {
+      font-size: 16px; /* un peu plus gros */
+      margin: 0;
+      text-align: center;
+    }
+
+    .info_item {
+      display: flex;
+      align-items: center;
+      margin: 0 20px;
+      gap: 10px;
+
+      img {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .logo_footer {
+    position: absolute;
+    right: 20px;
+    height: auto !important;
+    width: 100px !important;
   }
 }
 
-.info_item {
-  display: flex;
-  align-items: center;
-  margin: 0 20px;
-  gap: 10px;
+/* ======== Responsive Mobile & Tablette ======== */
+@media (max-width: 768px) {
+  .footer {
+    height: auto;
+    flex-direction: column;
+    padding: 20px 10px;
+
+    .footer_info {
+      flex-direction: column;
+      gap: 12px; /* un peu plus d’espace vertical */
+      align-items: center;
+
+      .info_item {
+        margin: 5px 0;
+        gap: 10px;
+
+        img {
+          width: 28px;
+          height: 28px;
+        }
+
+        p {
+          font-size: 15px; /* texte plus gros pour tablette */
+        }
+      }
+    }
+
+    .logo_footer {
+      position: relative;
+      right: 0;
+      margin-top: 12px;
+      width: 90px !important;
+    }
+  }
 }
 
-.info_item img {
-  border-radius: 50%;
-}
+/* ======== Responsive très petit écran ======== */
+@media (max-width: 480px) {
+  .footer {
+    padding: 15px 10px;
 
-.logo_footer {
-  position: absolute;
-  right: 0px;
-  height: auto !important;
-  width: 100px !important;
+    .footer_info {
+      .info_item {
+        flex-direction: column;
+        gap: 6px;
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+
+        p {
+          font-size: 14px; /* un peu plus gros pour lisibilité */
+        }
+      }
+    }
+
+    .logo_footer {
+      width: 70px !important;
+      margin-top: 10px;
+    }
+  }
 }

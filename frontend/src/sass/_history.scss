@@ -1,13 +1,20 @@
+/* Empêche tous les débordements globaux */
+* {
+  box-sizing: border-box;
+}
+
+/* ======== Desktop / PC ======== */
 .apropos {
   .title-description {
     background-color: white;
+
     .titledescription {
       padding: 10px;
       display: flex;
       justify-content: center;
       font-size: 50px;
       background-color: white !important;
-      font-family: "Limelight", sans-serif; /* ← font Google utilisée */
+      font-family: "Limelight", sans-serif;
       text-decoration: underline;
     }
 
@@ -53,7 +60,8 @@
       text-align: center;
     }
 
-    .img-container1 {
+    .img-container1,
+    .img-container2 {
       position: relative;
       display: flex;
       justify-content: center;
@@ -61,7 +69,8 @@
       gap: 100px;
       margin-bottom: 50px;
 
-      .gif {
+      .gif,
+      .img-marques {
         border-radius: 25px;
       }
     }
@@ -76,20 +85,10 @@
       padding: 25px;
       margin-bottom: 50px;
     }
-
-    .img-container2 {
-      position: relative;
-      padding: 50px;
-      display: flex;
-      justify-content: center; 
-      align-items: center; 
-
-      .img-marques {
-      }
-    }
   }
 }
 
+/* ======== Carrousel desktop (inchangé) ======== */
 @keyframes rotar {
   from {
     transform: rotateY(0deg);
@@ -98,69 +97,37 @@
     transform: rotateY(360deg);
   }
 }
-#slideshow {
-  height: 25vh;
-  width: 100%;
-  box-sizing: border-box;
-}
-.slideshow-title {
-  font-size: 62px;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 10%;
-  letter-spacing: 3px;
-  font-weight: 300;
-}
-.sub-heading {
-  padding-top: 50px;
-  font-size: 18px;
-}
-.sub-heading-two {
-  font-size: 15px;
-}
-.sub-heading-three {
-  font-size: 13px;
-}
-.sub-heading-four {
-  font-size: 11px;
-}
-.sub-heading-five {
-  font-size: 9px;
-}
-.sub-heading-six {
-  font-size: 7px;
-}
-.sub-heading-seven {
-  font-size: 5px;
-}
-.sub-heading-eight {
-  font-size: 3px;
-}
-.sub-heading-nine {
-  font-size: 1px;
-}
+
 .entire-content {
   margin: auto;
   width: 190px;
   perspective: 1000px;
-  position: relative;;
+  position: relative;
 }
+
 .content-carrousel {
   width: 100%;
   position: absolute;
   float: right;
   animation: rotar 15s infinite linear;
   transform-style: preserve-3d;
+
   &:hover {
     animation-play-state: paused;
     cursor: pointer;
   }
+
   figure {
     width: 100%;
     height: 120px;
-    border: 1px solid #3B444B;
+    border: 1px solid #3b444b;
     overflow: hidden;
     position: absolute;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     &:nth-child(1) {
       transform: rotateY(0deg) translateZ(300px);
     }
@@ -192,30 +159,324 @@
       transform: rotateY(360deg) translateZ(300px);
     }
   }
+
   img {
-    image-rendering: auto;
-    transition: all 300ms;
     width: 100%;
     height: 100%;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    transition: all 300ms;
+
     &:hover {
       transform: scale(1.2);
       transition: all 300ms;
     }
   }
 }
-.shadow {
-  position: absolute;
-  box-shadow: 0px 0px 5px 0px #000;
-  border-radius: 1px;
-  background-color: white !important;
+
+#slideshow {
+  height: 25vh;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.testzeubi{
-  display: flex;
-  justify-content: center !important;
-  font-family: "Limelight", sans-serif; /* ← font Google utilisée */
-  margin-bottom: 50px;
-  text-decoration: underline;
+/* ======== Responsive Mobile & Tablette ======== */
+
+/* Tablette paysage et petits écrans desktop */
+@media (max-width: 1440px) {
+  .apropos .title-description .content {
+    gap: 50px;
+  }
+
+  .apropos .title-description .img-container1,
+  .apropos .title-description .img-container2 {
+    gap: 50px;
+  }
+
+  .apropos .title-description .content p {
+    width: 600px;
+  }
 }
 
+/* Tablette portrait */
+@media (max-width: 1024px) {
+  body,
+  html {
+    overflow-x: hidden;
+  }
 
+  .apropos .title-description .titledescription {
+    font-size: 42px;
+    padding: 10px 5px;
+  }
+
+  .apropos .title-description .title_propos {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .apropos .title-description .description-container {
+    margin-bottom: 60px;
+    margin-top: 60px;
+  }
+
+  .description-container,
+  .content,
+  .img-container1,
+  .img-container2 {
+    flex-direction: column;
+    gap: 40px;
+    margin: 20px 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  /* Image responsive tablette */
+  .image {
+    width: 80% !important;
+    max-width: 500px !important;
+    height: auto !important;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border-radius: 25px;
+  }
+
+  /* Citation wrapper responsive */
+  .citation-wrapper {
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .citation-wrapper .img-citation {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border-radius: 25px;
+  }
+
+  /* GIF responsive */
+  .gif {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border-radius: 25px;
+  }
+
+  /* Texte responsive tablette */
+  .paragraphe {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .paragraphe p {
+    width: 100% !important;
+    max-width: 700px !important;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .apropos .title-description .marques {
+    font-size: 42px;
+    padding: 20px;
+  }
+
+  /* Carrousel tablette */
+  #slideshow {
+    height: 22vh;
+    overflow: hidden;
+  }
+
+  .entire-content {
+    width: 170px;
+    margin: auto;
+  }
+
+  .content-carrousel figure {
+    height: 100px;
+  }
+
+  .content-carrousel figure:nth-child(1) {
+    transform: rotateY(0deg) translateZ(270px) !important;
+  }
+  .content-carrousel figure:nth-child(2) {
+    transform: rotateY(40deg) translateZ(270px) !important;
+  }
+  .content-carrousel figure:nth-child(3) {
+    transform: rotateY(80deg) translateZ(270px) !important;
+  }
+  .content-carrousel figure:nth-child(4) {
+    transform: rotateY(120deg) translateZ(270px) !important;
+  }
+  .content-carrousel figure:nth-child(5) {
+    transform: rotateY(160deg) translateZ(270px) !important;
+  }
+  .content-carrousel figure:nth-child(6) {
+    transform: rotateY(200deg) translateZ(270px) !important;
+  }
+  .content-carrousel figure:nth-child(7) {
+    transform: rotateY(240deg) translateZ(270px) !important;
+  }
+  .content-carrousel figure:nth-child(8) {
+    transform: rotateY(280deg) translateZ(270px) !important;
+  }
+  .content-carrousel figure:nth-child(9) {
+    transform: rotateY(320deg) translateZ(270px) !important;
+  }
+  .content-carrousel figure:nth-child(10) {
+    transform: rotateY(360deg) translateZ(270px) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .apropos .title-description .titledescription {
+    font-size: 36px;
+  }
+
+  .apropos .title-description .title_propos {
+    font-size: 36px;
+  }
+
+  .apropos .title-description .description-container {
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+
+  .description-container,
+  .content,
+  .img-container1,
+  .img-container2 {
+    gap: 30px;
+    padding: 0 15px;
+  }
+
+  /* Image responsive mobile */
+  .image {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Citation wrapper responsive mobile */
+  .citation-wrapper {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  /* GIF responsive mobile */
+  .gif {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .paragraphe {
+    padding: 0 10px;
+  }
+
+  .paragraphe p {
+    max-width: 100% !important;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding: 0 5px;
+  }
+
+  .apropos .title-description .marques {
+    font-size: 36px;
+    padding: 15px;
+  }
+
+  /* Carrousel mobile */
+  #slideshow {
+    height: 20vh;
+  }
+
+  .entire-content {
+    width: 150px;
+  }
+
+  .content-carrousel figure {
+    height: 90px;
+  }
+
+  .content-carrousel figure:nth-child(1) {
+    transform: rotateY(0deg) translateZ(250px) !important;
+  }
+  .content-carrousel figure:nth-child(2) {
+    transform: rotateY(40deg) translateZ(250px) !important;
+  }
+  .content-carrousel figure:nth-child(3) {
+    transform: rotateY(80deg) translateZ(250px) !important;
+  }
+  .content-carrousel figure:nth-child(4) {
+    transform: rotateY(120deg) translateZ(250px) !important;
+  }
+  .content-carrousel figure:nth-child(5) {
+    transform: rotateY(160deg) translateZ(250px) !important;
+  }
+  .content-carrousel figure:nth-child(6) {
+    transform: rotateY(200deg) translateZ(250px) !important;
+  }
+  .content-carrousel figure:nth-child(7) {
+    transform: rotateY(240deg) translateZ(250px) !important;
+  }
+  .content-carrousel figure:nth-child(8) {
+    transform: rotateY(280deg) translateZ(250px) !important;
+  }
+  .content-carrousel figure:nth-child(9) {
+    transform: rotateY(320deg) translateZ(250px) !important;
+  }
+  .content-carrousel figure:nth-child(10) {
+    transform: rotateY(360deg) translateZ(250px) !important;
+  }
+}
+
+/* Petits mobiles */
+@media (max-width: 480px) {
+  .apropos .title-description .titledescription {
+    font-size: 28px;
+  }
+
+  .apropos .title-description .title_propos {
+    font-size: 28px;
+  }
+
+  .paragraphe p {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+
+  .apropos .title-description .marques {
+    font-size: 28px;
+    padding: 10px;
+  }
+
+  #slideshow {
+    height: 18vh;
+  }
+
+  .entire-content {
+    width: 130px;
+  }
+
+  .content-carrousel figure {
+    height: 80px;
+  }
+}

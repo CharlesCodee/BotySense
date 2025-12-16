@@ -1,38 +1,185 @@
-/* Styles de la navbar */
 .containerNavBar {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #49362a;
-  font-family: "Limelight", sans-serif; /* ← font Google utilisée */
+  font-family: "Limelight", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
 
-  .panier {
-    width: 4vw;
+  .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
   }
 
-  .links {
-    display: flex;
-    cursor: pointer;
-    justify-content: space-around;
-    align-items: center;
-    width: 100vw;
-    font-family: "Limelight", sans-serif; /* même font pour les liens */
+ /* --- LOGO (un peu plus à gauche) --- */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: -1rem; /* 🔹 décale légèrement vers la gauche */
+  
+  .boty {
+    width: 110px;
+    height: auto;
+    transition: all 0.3s ease;
+  }
+}
 
-    .boty {
-      width: 7vw;
-    }
+
+  /* --- LINKS (centrés) --- */
+  .links {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-family: "Limelight", sans-serif;
+    transition: all 0.4s ease;
 
     h3 {
-      color: white !important;
-      transition: color 0.6s;
+      color: white;
+      font-family: "Limelight", sans-serif;
+      font-weight: 400;
       border-bottom: 1px solid transparent;
-      font-family: "Limelight", sans-serif; /* force la font sur les h3 */
-      font-weight: 400; /* poids normal de Limelight */
+      cursor: pointer;
+      transition: color 0.4s, border-bottom 0.4s;
 
       &:hover {
         border-bottom: 1px solid $or-rose;
-        transition: 0.6s;
         color: $or-rose;
+      }
+    }
+
+    .panier {
+      width: 35px;
+      height: auto;
+      transition: transform 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  /* --- BURGER ICON --- */
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1200;
+    position: absolute;
+    left: 90%; /* léger décalage pour ne pas être coupé */
+    top: 50%;
+    transform: translateY(-50%);
+
+    span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    &.open span:nth-child(1) {
+      transform: rotate(45deg) translateY(7px);
+    }
+    &.open span:nth-child(2) {
+      opacity: 0;
+    }
+    &.open span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-7px);
+    }
+  }
+
+  /* ====================== */
+  /* 💻 TABLET (≤ 1024px)   */
+  /* ====================== */
+  @media (max-width: 1024px) {
+    .logo .boty {
+      width: 95px;
+    }
+
+    .links {
+      gap: 1.5rem;
+
+      h3 {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  /* ====================== */
+  /* 📱 MOBILE (≤ 768px)    */
+  /* ====================== */
+  @media (max-width: 768px) {
+    .burger {
+      display: flex;
+    }
+
+    .links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background-color: #49362a;
+      padding: 1.5rem 0;
+      gap: 1rem;
+      transform: translateY(-120%);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s ease;
+      font-family: "Limelight", sans-serif;
+
+      &.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+      }
+
+      .panier {
+        width: 40px;
+      }
+    }
+
+    .logo .boty {
+      width: 80px;
+    }
+  }
+
+  /* ====================== */
+  /* 📱 SMALL MOBILE (≤480px) */
+  /* ====================== */
+  @media (max-width: 480px) {
+    .logo .boty {
+      width: 65px;
+    }
+
+    .links {
+      gap: 0.8rem;
+      h3 {
+        font-size: 0.9rem;
       }
     }
   }

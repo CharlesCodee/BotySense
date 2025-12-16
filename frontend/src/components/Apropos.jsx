@@ -31,11 +31,13 @@ function Apropos() {
           </div>
         </div>
         <div className="img-container1">
-          <img
-            src="./images/citationloreal.png"
-            alt="citations"
-            className="img-citation"
-          />
+          <div className="citation-wrapper">
+            <img
+              src="./images/citationloreal.png"
+              alt="citations"
+              className="img-citation"
+            />
+          </div>
           <img
             className="gif"
             src="./images/Neutral Modern Skincare Instagram Reels.gif"
@@ -44,7 +46,6 @@ function Apropos() {
         </div>
       </div>
       <div className="testzeubi">
-        <p>Découvrir nos collaborateurs</p>
       </div>
       <section id="slideshow">
         <div className="entire-content">
